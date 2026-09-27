@@ -2,5 +2,6 @@
   "name": "ViMax",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
   "forwardPorts": [4173],
-  "postCreateCommand": "bash .devcontainer/setup.sh"
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "postStartCommand": "bash .devcontainer/setup.sh"
 }
