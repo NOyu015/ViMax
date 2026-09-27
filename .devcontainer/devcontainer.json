@@ -2,5 +2,5 @@
   "name": "ViMax",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
   "forwardPorts": [4173],
-  "postCreateCommand": "sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null && cd web && npm install --no-audit --no-fund && npm run build && cd .. && cp -n configs/agent.example.yaml configs/agent.local.yaml; curl -LsSf https://astral.sh/uv/install.sh | sh && ~/.local/bin/uv sync --frozen --no-dev && nohup env VIMAX_PYTHON_CMD=\"$(pwd)/.venv/bin/python3\" VIMAX_WEB_HOST=0.0.0.0 node web/server.mjs > /tmp/vimax.log 2>&1 & sleep 8; curl -s http://127.0.0.1:4173/api/health"
+  "postCreateCommand": "bash .devcontainer/setup.sh"
 }
