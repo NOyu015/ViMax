@@ -1,0 +1,4 @@
+tunnel_url: https://fell-productivity-successful-beautiful.trycloudflare.com
+health: {"ok":true,"agentRunning":false,"activeSessionId":""}
+portvis: .devcontainer/setup.sh: line 18: gh: command not found
+when: Sun Sep 27 12:38:16 UTC 2026
