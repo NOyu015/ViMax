@@ -1,4 +1,9 @@
-tunnel_url: https://fell-productivity-successful-beautiful.trycloudflare.com
+tunnel_url: https://reef-reports-hydraulic-recommendation.trycloudflare.com
 health: {"ok":true,"agentRunning":false,"activeSessionId":""}
-portvis: .devcontainer/setup.sh: line 18: gh: command not found
-when: Sun Sep 27 12:38:16 UTC 2026
+portvis: {
+  "message": "Not Found",
+  "documentation_url": "https://docs.github.com/rest",
+  "status": "404"
+}
+port_url: https://fictional-umbrella-gxxvwx4vp6r7h5rg-4173.app.github.dev/
+when: Sun Sep 27 13:00:52 UTC 2026
