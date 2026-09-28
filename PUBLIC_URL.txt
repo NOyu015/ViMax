@@ -1,4 +1,4 @@
-tunnel_url: https://corners-bottom-icons-eclipse.trycloudflare.com
+tunnel_url: https://stanley-sometimes-stadium-local.trycloudflare.com
 health: {"ok":true,"agentRunning":false,"activeSessionId":""}
 portvis: {
   "message": "Not Found",
@@ -6,4 +6,4 @@ portvis: {
   "status": "404"
 }
 port_url: https://fictional-umbrella-gxxvwx4vp6r7h5rg-4173.app.github.dev/
-when: Sun Sep 27 20:41:27 UTC 2026
+when: Mon Sep 28 02:55:12 UTC 2026
