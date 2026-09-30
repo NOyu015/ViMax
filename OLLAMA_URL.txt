@@ -1,0 +1,3 @@
+ollama_url: https://formal-yrs-amenities-marked.trycloudflare.com
+ollama_models: 
+when: Wed Sep 30 11:16:33 UTC 2026

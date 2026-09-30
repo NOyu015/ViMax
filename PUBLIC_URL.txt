@@ -1,9 +1,11 @@
-tunnel_url: https://served-wednesday-provided-def.trycloudflare.com
+tunnel_url: https://packaging-opened-hats-insured.trycloudflare.com
 health: {"ok":true,"agentRunning":false,"activeSessionId":""}
+ollama_url: https://formal-yrs-amenities-marked.trycloudflare.com
+ollama_health: 
 portvis: {
   "message": "Not Found",
   "documentation_url": "https://docs.github.com/rest",
   "status": "404"
 }
-port_url: https://fictional-umbrella-gxxvwx4vp6r7h5rg-4173.app.github.dev/
-when: Mon Sep 28 16:52:23 UTC 2026
+port_url: https://bug-free-umbrella-jrrpwrjpggqrcq66v-4173.app.github.dev/
+when: Wed Sep 30 11:16:33 UTC 2026
