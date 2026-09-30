@@ -1,6 +1,6 @@
-tunnel_url: https://packaging-opened-hats-insured.trycloudflare.com
+tunnel_url: https://insider-lip-learners-aspects.trycloudflare.com
 health: {"ok":true,"agentRunning":false,"activeSessionId":""}
-ollama_url: https://formal-yrs-amenities-marked.trycloudflare.com
+ollama_url: https://due-graduated-assessing-invite.trycloudflare.com
 ollama_health: 
 portvis: {
   "message": "Not Found",
@@ -8,4 +8,4 @@ portvis: {
   "status": "404"
 }
 port_url: https://bug-free-umbrella-jrrpwrjpggqrcq66v-4173.app.github.dev/
-when: Wed Sep 30 11:16:33 UTC 2026
+when: Wed Sep 30 11:18:38 UTC 2026
