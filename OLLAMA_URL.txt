@@ -1,3 +1,3 @@
-ollama_url: https://due-graduated-assessing-invite.trycloudflare.com
+ollama_url: https://entity-auburn-emotional-soldier.trycloudflare.com
 ollama_models: 
-when: Wed Sep 30 11:18:38 UTC 2026
+when: Thu Oct  1 01:35:52 UTC 2026
