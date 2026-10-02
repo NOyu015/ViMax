@@ -1,6 +1,6 @@
-tunnel_url: https://shanghai-broke-quad-myth.trycloudflare.com
+tunnel_url: https://vision-wow-princeton-pushed.trycloudflare.com
 health: {"ok":true,"agentRunning":false,"activeSessionId":""}
-ollama_url: https://entity-auburn-emotional-soldier.trycloudflare.com
+ollama_url: https://storage-thunder-porcelain-nylon.trycloudflare.com
 ollama_health: 
 portvis: {
   "message": "Not Found",
@@ -8,4 +8,4 @@ portvis: {
   "status": "404"
 }
 port_url: https://bug-free-umbrella-jrrpwrjpggqrcq66v-4173.app.github.dev/
-when: Thu Oct  1 01:35:52 UTC 2026
+when: Fri Oct  2 06:41:59 UTC 2026
