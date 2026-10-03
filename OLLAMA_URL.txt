@@ -1,3 +1,3 @@
-ollama_url: https://merely-ware-bones-sender.trycloudflare.com
+ollama_url: https://festival-scotia-beaches-public.trycloudflare.com
 ollama_models: 
-when: Fri Oct  2 19:27:10 UTC 2026
+when: Sat Oct  3 07:24:27 UTC 2026

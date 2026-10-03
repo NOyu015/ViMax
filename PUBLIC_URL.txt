@@ -1,6 +1,6 @@
-tunnel_url: https://browser-messaging-approximately-handle.trycloudflare.com
+tunnel_url: https://logical-real-heart-bracket.trycloudflare.com
 health: {"ok":true,"agentRunning":false,"activeSessionId":""}
-ollama_url: https://merely-ware-bones-sender.trycloudflare.com
+ollama_url: https://festival-scotia-beaches-public.trycloudflare.com
 ollama_health: 
 portvis: {
   "message": "Not Found",
@@ -8,4 +8,4 @@ portvis: {
   "status": "404"
 }
 port_url: https://bug-free-umbrella-jrrpwrjpggqrcq66v-4173.app.github.dev/
-when: Fri Oct  2 19:27:10 UTC 2026
+when: Sat Oct  3 07:24:27 UTC 2026
