@@ -1,4 +1,4 @@
-import {createReadStream, existsSync} from 'node:fs';
+import {createReadStream, existsSync, statSync} from 'node:fs';
 import {readFile} from 'node:fs/promises';
 import {createServer} from 'node:http';
 import path from 'node:path';
@@ -66,7 +66,7 @@ const server = createServer(async (request, response) => {
       return sendJson(response, 200, {artifacts: await listSessionArtifacts(repoRoot, url.searchParams.get('session') || '')});
     }
     if (url.pathname === '/api/artifact' && request.method === 'GET') {
-      return streamArtifact(response, url.searchParams.get('session') || '', url.searchParams.get('path') || '');
+      return streamArtifact(request, response, url.searchParams.get('session') || '', url.searchParams.get('path') || '');
     }
     if (url.pathname === '/api/uploads' && request.method === 'POST') {
       const sessionId = url.searchParams.get('session') || '';
@@ -293,11 +293,54 @@ function sendJson(response, status, payload) {
   response.end(JSON.stringify(payload));
 }
 
-async function streamArtifact(response, sessionId, relativePath) {
+async function streamArtifact(request, response, sessionId, relativePath) {
   const filePath = resolveArtifactPath(repoRoot, sessionId, relativePath);
   if (!existsSync(filePath)) return sendJson(response, 404, {error: 'Artifact not found'});
+  let size;
+  try {
+    size = statSync(filePath).size;
+  } catch {
+    return sendJson(response, 404, {error: 'Artifact not found'});
+  }
+  const contentType = artifactContentType(filePath);
+  // iOS Safari requires byte-range support for <video> playback: it probes with
+  // `Range: bytes=0-1` and refuses to play when the server answers 200 instead
+  // of 206. Without this, video never plays on iPhone and fullscreen errors out.
+  const rangeHeader = request.headers.range;
+  if (rangeHeader) {
+    const match = /^bytes=(\d*)-(\d*)$/.exec(rangeHeader.trim());
+    const unsatisfiable = () => {
+      response.writeHead(416, {'Content-Range': `bytes */${size}`});
+      response.end();
+    };
+    if (!match) return unsatisfiable();
+    let start = match[1] === '' ? null : Number(match[1]);
+    let end = match[2] === '' ? null : Number(match[2]);
+    if ((start === null && end === null) || Number.isNaN(start ?? 0) || Number.isNaN(end ?? 0)) {
+      return unsatisfiable();
+    }
+    if (start === null) {
+      // Suffix range: last N bytes.
+      start = Math.max(size - end, 0);
+      end = size - 1;
+    }
+    if (end === null || end >= size) end = size - 1;
+    if (start >= size || start > end) return unsatisfiable();
+    const chunkSize = end - start + 1;
+    response.writeHead(206, {
+      'Content-Type': contentType,
+      'Content-Length': chunkSize,
+      'Content-Range': `bytes ${start}-${end}/${size}`,
+      'Accept-Ranges': 'bytes',
+      'Cache-Control': 'private, max-age=60',
+    });
+    createReadStream(filePath, {start, end}).pipe(response);
+    return;
+  }
   response.writeHead(200, {
-    'Content-Type': artifactContentType(filePath),
+    'Content-Type': contentType,
+    'Content-Length': size,
+    'Accept-Ranges': 'bytes',
     'Cache-Control': 'private, max-age=60',
   });
   createReadStream(filePath).pipe(response);

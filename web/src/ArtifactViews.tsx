@@ -221,7 +221,7 @@ function MediaPreviewDialog({artifact, onClose}: {artifact: Artifact; onClose: (
         <div className="media-preview-stage">
           {artifact.kind === 'image'
             ? <img src={mediaUrl(artifact)} alt={visualArtifactLabel(artifact)} />
-            : <video src={mediaUrl(artifact)} controls autoPlay playsInline preload="metadata" />}
+            : <video src={mediaUrl(artifact)} controls autoPlay muted playsInline preload="metadata" />}
         </div>
       </section>
     </div>

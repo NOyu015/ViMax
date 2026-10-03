@@ -1687,6 +1687,7 @@ a:focus-visible {
   display: grid;
   place-items: center;
   padding: 28px;
+  padding-bottom: max(28px, env(safe-area-inset-bottom));
   background: rgba(20, 25, 31, 0.64);
   backdrop-filter: blur(7px);
   animation: dialog-backdrop-in 140ms ease both;
@@ -1696,6 +1697,7 @@ a:focus-visible {
   display: flex;
   width: min(1120px, 100%);
   max-height: calc(100vh - 56px);
+  max-height: calc(100dvh - 56px);
   overflow: hidden;
   flex-direction: column;
   background: #f8fafb;
@@ -1743,6 +1745,7 @@ a:focus-visible {
 .media-preview-stage {
   display: grid;
   min-height: min(640px, calc(100vh - 110px));
+  min-height: min(640px, calc(100dvh - 110px));
   place-items: center;
   overflow: hidden;
   background: #15191e;
@@ -1753,6 +1756,7 @@ a:focus-visible {
   display: block;
   max-width: 100%;
   max-height: calc(100vh - 110px);
+  max-height: calc(100dvh - 110px);
   object-fit: contain;
 }
 
@@ -2947,20 +2951,24 @@ html[data-theme='dark'] .storyboard-panel > footer button:hover:not(:disabled) {
 
   .media-preview-backdrop {
     padding: 10px;
+    padding-bottom: max(10px, env(safe-area-inset-bottom));
   }
 
   .media-preview-dialog {
     max-height: calc(100vh - 20px);
+    max-height: calc(100dvh - 20px);
   }
 
   .media-preview-stage {
     min-height: 0;
     height: calc(100vh - 76px);
+    height: calc(100dvh - 76px);
   }
 
   .media-preview-stage img,
   .media-preview-stage video {
     max-height: calc(100vh - 76px);
+    max-height: calc(100dvh - 76px);
   }
 
   .structured-fields {
